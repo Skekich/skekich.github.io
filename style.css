@@ -5,12 +5,19 @@ body {
   font-family: 'Karla';
 }
 
+.about{
+  background-color: coral;
+  padding: 10px;
+}
+
 .projects{
   background-color: coral;
   padding: 0px;
 }
 
-.about{
-  background-color: coral;
-  padding: 10px;
+.project-content{
+  display: inline-block;
+  text-align: left;
+  vertical-align: top;
+  margin: 45px, 50px, 50px, 50px;
 }
