@@ -135,6 +135,7 @@ nav {
   padding: 10em .5em;
 }
 
+.content h1,
 .content p {
   color: white;
   position: relative;
