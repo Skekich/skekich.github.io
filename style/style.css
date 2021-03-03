@@ -182,15 +182,15 @@ nav {
 }
 
 .first-img{
-  background-image: url('\\images/img1.jpg');
+  background-image: url('/images/img1.jpg');
 }
 
 .second-img {
-  background-image: url('\\images/img2.png');
+  background-image: url('/images/img2.png');
 }
 
 .third-img {
-  background-image: url('\\images/img3.jpg');
+  background-image: url('/images/img3.jpg');
 }
 
 /* #endregion */
