@@ -24,7 +24,7 @@ a {
 
 .wrapper {
   display: grid;
-  grid-template-rows: repeat(3, auto);
+  grid-template-rows: 4.2em repeat(2, auto);
   grid-template-columns: auto;
 }
 
@@ -41,17 +41,27 @@ nav {
   position: sticky; 
   top: 0;
   z-index: 10;
+  transition: 0.5s;
+}
+ 
+nav.hide{
+  transform: translateY(-100%);
 }
 
 .menu li {
   font-size: 16px;
 }
 
+
 .logo {
   display: inline-block;
   order: 1; 
   padding-left: 1.5em;
   font-size: 20px;
+}
+
+.logo a:visited a:focus {
+  outline: none;
 }
 
 /* #region hamburger menu */
@@ -83,12 +93,17 @@ nav {
 /* #region Mobile menu */
 
 .menu {
+  background-color: #222;
   display: none;
   flex-flow: column nowrap;
   justify-content: flex-end;
   align-items: center;
   flex: 0 0 100%;
   order: 3;
+}
+
+.menu.show {
+  display: flex;  
 }
 
 .menu li a {
@@ -114,10 +129,6 @@ nav {
   color: black;
 }
 
-.menu.show {
-  display: flex;
-}
-
 .content {
   display: grid;
   grid-template-rows: 20em 100em 20em 100em 20em 25em;
@@ -135,8 +146,7 @@ nav {
   padding: 10em .5em;
 }
 
-.content h1,
-.content p {
+.content :is(h1, p) {
   color: white;
   position: relative;
   text-align: center;
@@ -204,6 +214,8 @@ nav {
   }
 
   .menu {
+    /* visibility: visible;
+    opacity: 1; */
     display: flex;
     flex-flow: row nowrap;
     flex: 0 1 33%;

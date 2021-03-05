@@ -1,31 +1,42 @@
 const hamburger = document.querySelector('#hamburger');
 const navUL = document.querySelector('#menu');
 const page = document.querySelector('.content');
+const navBar = document.querySelector('nav');
 
-hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('change');
-    navUL.classList.toggle('show');
+const navArray = [navUL, page]
+
+let isClicked = false;
+
+hamburger.addEventListener('click', () => { 
+    hamburger.classList.toggle('change'); 
+    navUL.classList.toggle('show'); 
+}); 
+
+navArray.forEach(item => {
+    item.addEventListener('click', () =>{
+        removeClass();        
+    });
 });
 
-navUL.addEventListener('click', () => {
-   navUL.classList.remove('show');
-   hamburger.classList.remove('change');
-});
-
-page.addEventListener('click', () => {
+function removeClass() {
     navUL.classList.remove('show');
     hamburger.classList.remove('change');
-});
-
-/* const nav = document.querySelector('#nav');
-let navTop = nav.offsetTop;
-
-function fixedNav() {
-    if(window.scrollY > navTop){
-        nav.classList.add('squish');
-    } else {
-        nav.classList.remove('squish');
-    }
 }
 
-window.addEventListener('scroll', fixedNav) */
+
+let = preScroll = window.pageYOffset;
+
+window.addEventListener('scroll', () => {
+    let currScroll = window.pageYOffset;
+
+    if(preScroll < currScroll){
+        navBar.classList.add('hide');
+        navUL.classList.remove('show');
+    }
+    else{
+        navBar.classList.remove('hide');
+    }
+
+    preScroll = currScroll;
+})
+
