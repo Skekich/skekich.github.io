@@ -5,8 +5,6 @@ const navBar = document.querySelector('nav');
 
 const navArray = [navUL, page]
 
-let isClicked = false;
-
 hamburger.addEventListener('click', () => { 
     hamburger.classList.toggle('change'); 
     navUL.classList.toggle('show'); 
@@ -14,11 +12,11 @@ hamburger.addEventListener('click', () => {
 
 navArray.forEach(item => {
     item.addEventListener('click', () =>{
-        removeClass();        
+        closeMenuBar();        
     });
 });
 
-function removeClass() {
+function closeMenuBar() {
     navUL.classList.remove('show');
     hamburger.classList.remove('change');
 }
@@ -32,6 +30,7 @@ window.addEventListener('scroll', () => {
     if(preScroll < currScroll){
         navBar.classList.add('hide');
         navUL.classList.remove('show');
+        hamburger.classList.remove('change');
     }
     else{
         navBar.classList.remove('hide');

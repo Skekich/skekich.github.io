@@ -41,6 +41,7 @@ nav {
   position: sticky; 
   top: 0;
   z-index: 10;
+  /* transform-style: preserve-3d; */
   transition: 0.5s;
 }
  
@@ -100,10 +101,13 @@ nav.hide{
   align-items: center;
   flex: 0 0 100%;
   order: 3;
+  /* transition: 1s ease;
+  transform: translateZ(-1em);   */
 }
 
 .menu.show {
-  display: flex;  
+  display: flex;
+  /* transform: translateY(-300px);   */
 }
 
 .menu li a {
