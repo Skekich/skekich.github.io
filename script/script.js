@@ -21,7 +21,6 @@ function closeMenuBar() {
     hamburger.classList.remove('change');
 }
 
-
 let = preScroll = window.pageYOffset;
 
 window.addEventListener('scroll', () => {

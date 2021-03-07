@@ -41,8 +41,8 @@ nav {
   position: sticky; 
   top: 0;
   z-index: 10;
-  /* transform-style: preserve-3d; */
-  transition: 0.5s;
+  transform-style: preserve-3d;
+  transition: 0.4s;
 }
  
 nav.hide{
@@ -95,19 +95,20 @@ nav.hide{
 
 .menu {
   background-color: #222;
-  display: none;
+  display: flex;
   flex-flow: column nowrap;
   justify-content: flex-end;
   align-items: center;
   flex: 0 0 100%;
   order: 3;
-  /* transition: 1s ease;
-  transform: translateZ(-1em);   */
+  transition: 1s ease;
+  /* transform: translateY(-300px); */
+  transform: translateY(-19em) translateZ(-1em); 
 }
 
 .menu.show {
-  display: flex;
-  /* transform: translateY(-300px);   */
+  /* display: flex; */
+  transform: translateY(0);
 }
 
 .menu li a {
@@ -217,12 +218,16 @@ nav.hide{
     display: none;
   }
 
+  nav.hide{
+    transform: translateY(0);
+  }
+
   .menu {
-    /* visibility: visible;
-    opacity: 1; */
     display: flex;
     flex-flow: row nowrap;
     flex: 0 1 33%;
+    transition: none;
+    transform: translateY(0) translateZ(0);
   }
 
   .bg-image {
